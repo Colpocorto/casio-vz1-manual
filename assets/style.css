@@ -1,0 +1,23 @@
+:root{--fg:#1f2937;--mut:#6b7280;--acc:#2563eb;--bg:#fff;--soft:#f3f4f6;--bd:#d1d5db}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 system-ui,Segoe UI,Helvetica,Arial,sans-serif;color:var(--fg);background:var(--bg);display:flex}
+nav#toc{position:sticky;top:0;height:100vh;overflow:auto;width:280px;flex:none;padding:1rem;background:var(--soft);border-right:1px solid var(--bd);font-size:14px}
+nav#toc ul{list-style:none;padding-left:.9rem;margin:.2rem 0}nav#toc>.toc>ul{padding-left:0}
+nav#toc a{color:var(--fg);text-decoration:none}nav#toc a:hover{color:var(--acc)}
+main{max-width:900px;padding:2rem 2.5rem;counter-reset:ch}
+h1{border-bottom:3px solid var(--acc);padding-bottom:.3rem;margin-top:3.5rem;counter-increment:ch;page-break-before:always}
+h1:not(.nonum)::before{content:counter(ch) ". "}
+h1.nonum{counter-increment:none}
+h2{margin-top:2rem;border-bottom:1px solid var(--bd)}
+table{border-collapse:collapse;margin:1rem 0;font-size:14px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--bd);padding:.3rem .6rem;vertical-align:top}th{background:var(--soft)}
+code{background:var(--soft);padding:.05rem .3rem;border-radius:3px}
+kbd{border:1px solid #9ca3af;border-bottom-width:2px;border-radius:4px;padding:0 .35rem;font:600 .85em system-ui;background:#fff}
+figure{margin:1.5rem 0;text-align:center}figure svg{max-width:100%;height:auto;border:1px solid var(--bd);border-radius:6px}
+figcaption{font-size:13px;color:var(--mut);margin-top:.3rem}
+.admonition{border-left:4px solid var(--acc);background:#eff6ff;padding:.5rem 1rem;margin:1rem 0;border-radius:4px}
+.admonition.warning{border-color:#dc2626;background:#fef2f2}.admonition.tip{border-color:#059669;background:#ecfdf5}
+.admonition-title{font-weight:700;margin:0}
+.spec{background:var(--soft);padding:.4rem .8rem;border-radius:4px;font-size:14px}
+@media print{nav#toc{display:none}main{padding:0;max-width:none}body{font-size:11pt}h1{margin-top:0}figure,table{page-break-inside:avoid}}
+@media(max-width:800px){body{display:block}nav#toc{position:static;height:auto;width:auto}main{padding:1rem}}
